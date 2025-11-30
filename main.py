@@ -1,6 +1,7 @@
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from flask import Flask, request
 from flask_cors import CORS
 import io
@@ -9,16 +10,19 @@ app = Flask(__name__)
 CORS(app)
 
 
-MODEL_PATH = './ResNet_FINETUNING.keras'
+MODEL_PATH = './MobileNetV2_FINETUNING_224.keras'
 # {' Fresh': 0, ' Half-Fresh': 1, ' Spoiled': 2}
 CLASS_NAMES = ["Fresh", "Half-Fresh", "Spoiled"]
 
 def preprocessImage(img, target_size=(224,224)):
     # either save it temp or convert to io.Bytesio
-    preprocess = io.BytesIO(img.read())
+    img_bytes = img.read()
+    
+    preprocess = io.BytesIO(img_bytes)
     preprocess = image.load_img(preprocess, target_size=target_size)
+    
     preprocess = image.img_to_array(preprocess)
-    preprocess = preprocess.astype('float32') / 255.0
+    preprocess = preprocess_input(preprocess)
     preprocess = np.expand_dims(preprocess, axis=0)
     return preprocess
     
@@ -31,6 +35,8 @@ def classifyImage():
 
     image = request.files['image']
     preprocessed = preprocessImage(image)
+    
+    # print('USING: ', MODEL_PATH)
     model = load_model(MODEL_PATH)
     prediction = model.predict(preprocessed)
     label =  CLASS_NAMES[np.argmax(prediction)]

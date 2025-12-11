@@ -1,6 +1,7 @@
 :root {
     --color-primary: #FF7043; 
     --color-secondary: #4CAF50; 
+    --color-upload: #3577ce;
     --color-danger: hsl(4, 90%, 58%); 
     --color-background: #F8F8F8;
     --color-surface: #FFFFFF;
@@ -207,6 +208,16 @@ h4 {
 
 .control-button.primary:hover {
     background-color: #43A047;
+}
+
+
+.control-button.upload {
+    background-color: var(--color-upload);
+    color: var(--color-surface);
+}
+
+.control-button.upload:hover {
+    background-color: #20578f;
 }
 
 .control-button.secondary {

@@ -48,19 +48,36 @@
                         <video id="video-stream" autoplay playsinline style="display:none;"></video>
                         <canvas id="canvas-capture" style="display:none;"></canvas>
                         <p id="feed-placeholder">
-                            <span class="emoji"></span> Click "Start Camera" to activate your device's camera.
+                            <span class="emoji"></span> 📷 Start your camera or ⬆️ upload an image.
                         </p>
                     </div>
 
+                       <div class="controls">
+                        <button id="upload-img-btn" class="control-button upload">
+                            <span class="emoji" style=" padding-bottom: 5px;">⬆️</span>  Upload & Analyze
+                        </button>
+
+                        <button id="clear-img-btn" class="control-button danger"  disabled>
+                            <span class="emoji">🧹</span> Clear Image
+                        </button>
+                    </div>
+                 
+
+                    <p style="text-align: center;">
+                        or
+                    </p>
+
                     <div class="controls">
                         <button id="start-cam-btn" class="control-button primary">
-                            <span class="emoji"></span> Start Camera
+                            <span class="emoji" style=" padding-bottom: 5px;">📷</span> Start Camera
                         </button>
+
+
                         <button id="capture-btn" class="control-button secondary" disabled>
-                            <span class="emoji"></span> Capture & Analyze
+                            <span class="emoji">🔎</span> Capture & Analyze
                         </button>
-                        <button id="stop-cam-btn" class="control-button danger" disabled>
-                            <span class="emoji"></span> Stop Camera
+                        <button id="stop-cam-btn" class="control-button danger"  disabled>
+                            <span class="emoji">🚫</span> Stop Camera
                         </button>
                     </div>
                 </div>

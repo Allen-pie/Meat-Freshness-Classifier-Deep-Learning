@@ -1,8 +1,33 @@
-# Deep-Learning-Course-Project
 
-About Project:
-Meaty is a fast, reliable, and easy meat quality detection designed to help users check the freshness of their meat. Simply with 3 steps:
-1. Click on the start camera
-2. Capture the image
-3. You will receive the results.
-Meaty will make your daily cooking, shopping, and handling ingredients easier and quicker.
+# Meaty – Meat Freshness Classifier Powered by MobileNetV2
+Deep Learning course - COMP6826001
+
+**Meaty** is a fast, reliable, and easy-to-use meat quality detection system designed to help users identify the freshness of their meat. By leveraging the **MobileNetV2** deep learning architecture, Meaty provides quick and accurate classifications to support daily cooking, shopping, and ingredient handling.
+
+
+
+## How to Use    
+**1. Upload Image**
+
+    1. Click Upload Image
+    2. The system will automatically analyze the image
+    3. The freshness result will be displayed
+    4. Click Clear Image to upload another image
+
+**2. Use the Camera**
+
+    1. Click Start Camera
+    2. Capture the meat image
+    3. The results will appear automatically
+    4. Click Stop Camera when finished
+
+## Demo
+
+gif coming soon
+
+
+## Authors
+
+- [Pieter Allen](https://github.com/Allen-pie)
+- [Sylvana Marine Purnomo](https://github.com/SylvanaMarinePurnomo)
+- [Christian Sadikin](https://github.com/hect1x)

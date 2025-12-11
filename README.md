@@ -1,6 +1,5 @@
 
 # Meaty – Meat Freshness Classifier Powered by MobileNetV2
-Deep Learning course - COMP6826001
 
 **Meaty** is a fast, reliable, and easy-to-use meat quality detection system designed to help users identify the freshness of their meat. By leveraging the **MobileNetV2** deep learning architecture, Meaty provides quick and accurate classifications to support daily cooking, shopping, and ingredient handling.
 

@@ -9,7 +9,7 @@ import io
 app = Flask(__name__)
 CORS(app)
 
-MODEL_PATH = './MobileNetV2_FINETUNED_LAST.keras'
+MODEL_PATH = './outputs/models/MobileNetV2_FINETUNED_LAST.keras'
 CLASS_NAMES = ["Fresh", "Spoiled"]
 
 def preprocessImage(img, target_size=(224,224)):

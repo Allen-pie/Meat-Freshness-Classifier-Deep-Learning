@@ -136,10 +136,13 @@ h4 {
 
 .hero-text p {
   font-size: 1.2em;
+  width: 600px;
+  overflow-wrap: break-word;
+  @media (max-width: 768px) {
+    width: 250px;
+  }
   color: var(--color-text-light);
   margin-bottom: 10px;
-  overflow-wrap: break-word;
-  width: 660px;
 }
 
 .how-section {
@@ -299,6 +302,11 @@ h4 {
   position: absolute;
   font-size: 1.2em;
   text-align: center;
+
+   @media (max-width: 768px) {
+    font-size: 1em;
+
+  }
 }
 
 .controls {
@@ -311,7 +319,14 @@ h4 {
 .control-button {
   padding: 10px 20px;
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
   font-size: 0.95em;
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+    max-width: 300px;
+  }
 }
 
 .control-button.primary {
@@ -393,25 +408,32 @@ h4 {
 }
 
 footer {
-  text-align: center;
+  /*  */
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
   padding: 20px 5%;
   background-color: var(--color-text);
   color: var(--color-surface);
   font-size: 0.9em;
+   @media (max-width: 768px) {
+    text-align: start;
+  }
 }
 
-footer p {
+/* footer p {
   position: absolute;
-  margin: 0 auto;
-  left: 50%;
+  margin: 0 ;
+  left: 60%;
   transform: translateX(-50%);
-}
+  @media (max-width: 768px) {
+    transform: translateX(0%);
+  }
+} */
 
 footer a {
-  margin-left: auto;
+  margin-right: auto;
   display: flex;
   align-items: center;
   text-decoration: none;

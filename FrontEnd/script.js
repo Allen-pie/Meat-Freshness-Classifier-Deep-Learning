@@ -11,9 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const feedPlaceholder = document.getElementById('feed-placeholder');
     const resultBox = document.getElementById('prediction-result');
 
+    const cameraFeed = document.querySelector('.camera-feed');
+
     let currentStream = null;
 
     const resetResult = () => {
+
         resultBox.className = 'result-box';
         resultBox.innerHTML = '<p class="initial-message">Results will appear here after analysis.</p>';
     };
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             videoStream.srcObject = currentStream;
             videoStream.style.display = 'block';
             feedPlaceholder.style.display = 'none';
+            cameraFeed.style.maxHeight = "none";
 
             videoStream.onloadedmetadata = () => {
                 videoStream.play();
@@ -57,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         videoStream.style.display = 'none';
         canvasCapture.style.display = 'none';
         feedPlaceholder.style.display = 'block';
+        cameraFeed.style.maxHeight = "300px";
         feedPlaceholder.innerHTML = '📷 Start your camera or ⬆️ upload an image.';
-
         updateUI(false);
         resetResult();
     };
@@ -76,7 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = (e) => {
                     const img = new Image();
                     img.onload = () => {
-                        feedPlaceholder.style.display = 'none';
+                        cameraFeed.style.maxHeight = "none";
+                        feedPlaceholder.style.display = 'none'; 
+                        
 
                         const context = canvasCapture.getContext('2d');
                         canvasCapture.width = img.width;
@@ -107,8 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearImage = () => {
         canvasCapture.style.display = 'none';
         feedPlaceholder.style.display = 'block';
+        cameraFeed.style.maxHeight = "300px";
         feedPlaceholder.innerHTML = '📷 Start your camera or ⬆️ upload an image.';
         clearImgBtn.disabled = true;
+        updateUI(false);
         resetResult();
     }
 

@@ -21,9 +21,7 @@
     4. Click Stop Camera when finished
 
 ## Demo
-
-gif coming soon
-
+![DL-DEMO-GIF](https://github.com/user-attachments/assets/f5ab8803-1511-4789-85a4-979b936ee654)
 
 ## Authors
 

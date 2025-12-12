@@ -22,7 +22,7 @@
 
 ## Screenshots
 <p align="center">
-  <img src="https:<img width="1900" height="908" alt="Screenshot 2025-12-12 234950" src="https://github.com/user-attachments/assets/44632d50-9580-4ce8-b4c9-ad93a5bf9a46" />
+  <img width="1900" height="908" alt="Screenshot 2025-12-12 234950" src="https://github.com/user-attachments/assets/44632d50-9580-4ce8-b4c9-ad93a5bf9a46" />
     <img width="1899" height="911" alt="Screenshot 2025-12-12 234920" src="https://github.com/user-attachments/assets/a90c0bcc-6b90-4332-84ef-8d107bfa44d2" />
 <img width="1898" height="902" alt="Screenshot 2025-12-12 234608" src="https://github.com/user-attachments/assets/70e194cd-f7aa-460a-ad4f-3ea3a0e59265" />
 </p>

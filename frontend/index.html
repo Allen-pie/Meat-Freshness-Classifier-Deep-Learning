@@ -28,23 +28,29 @@
           <div class="hero-text">
             <h1>Hello meat lovers!</h1>
             <p>
-              <span style="color: var(--color-primary); font-weight: bold;">Meaty </span>
-                is a <span style="color: white; text-shadow: 1px 1px #000000;" >fast, reliable, and easy meat quality detection</span>
+              <span style="color: var(--color-primary); font-weight: bold"
+                >Meaty
+              </span>
+              is a
+              <span style="color: white; text-shadow: 1px 1px #000000"
+                >fast, reliable, and easy meat quality detection</span
+              >
               designed to help users check the freshness of their meat.
             </p>
 
             <p>
               Meaty will make your daily cooking, shopping, and handling
-              ingredients 
-              <span style="color: white; text-shadow: 1px 1px #000000;" >easier and quicker.</span>
-              
+              ingredients
+              <span style="color: white; text-shadow: 1px 1px #000000"
+                >easier and quicker.</span
+              >
             </p>
           </div>
 
           <section id="how-it-works" class="how-section">
             <div class="how-container">
               <div class="how-header">
-                <h1 style=" color: var(--color-primary);">How it works</h1>
+                <h1 style="color: var(--color-primary)">How it works</h1>
                 <h2>1. Upload Image</h2>
               </div>
 
@@ -54,9 +60,7 @@
                     <img src="Assets/image-up.svg" alt="Upload" />
                   </div>
                   <h3>Step 1</h3>
-                  <p>
-                    Click "Upload Image & Analyze"
-                  </p>
+                  <p>Click "Upload Image & Analyze"</p>
                 </div>
 
                 <div class="how-step">
@@ -64,9 +68,7 @@
                     <img src="Assets/sparkle.svg" alt="Analyze" />
                   </div>
                   <h3>Step 2</h3>
-                  <p>
-                    The system will automatically analyze the image
-                  </p>
+                  <p>The system will automatically analyze the image</p>
                 </div>
 
                 <div class="how-step">
@@ -75,9 +77,7 @@
                   </div>
 
                   <h3>Step 3</h3>
-                  <p>
-                     The results will appear automatically
-                  </p>
+                  <p>The results will appear automatically</p>
                 </div>
 
                 <div class="how-step">
@@ -85,9 +85,7 @@
                     <img src="Assets/brush-cleaning.svg" alt="Clear" />
                   </div>
                   <h3>Step 4</h3>
-                  <p>
-                    Click "Clear Image" to upload another image
-                  </p>
+                  <p>Click "Clear Image" to upload another image</p>
                 </div>
               </div>
 
@@ -101,9 +99,7 @@
                     <img src="Assets/camera.svg" alt="Upload" />
                   </div>
                   <h3>Step 1</h3>
-                  <p>
-                    Click "Start Camera"
-                  </p>
+                  <p>Click "Start Camera"</p>
                 </div>
 
                 <div class="how-step">
@@ -111,9 +107,7 @@
                     <img src="Assets/scan.svg" alt="Analyze" />
                   </div>
                   <h3>Step 2</h3>
-                  <p>
-                    Capture the meat image
-                  </p>
+                  <p>Capture the meat image</p>
                 </div>
 
                 <div class="how-step">
@@ -122,9 +116,7 @@
                   </div>
 
                   <h3>Step 3</h3>
-                  <p>
-                     The results will appear automatically
-                  </p>
+                  <p>The results will appear automatically</p>
                 </div>
 
                 <div class="how-step">
@@ -132,9 +124,7 @@
                     <img src="Assets/circle-off.svg" alt="Recommend" />
                   </div>
                   <h3>Step 4</h3>
-                  <p>
-                    Click "Stop Camera" when finished
-                  </p>
+                  <p>Click "Stop Camera" when finished</p>
                 </div>
               </div>
             </div>
@@ -154,55 +144,61 @@
         <div class="container">
           <h2>Instant Freshness Check</h2>
           <h3>
-            Ensure every dish is perfect. Click "Start Camera" or "Upload & Analyze" to begin.
+            Ensure every dish is perfect. Click "Start Camera" or "Upload &
+            Analyze" to begin.
           </h3>
 
           <div class="detection-area">
             <div id="camera-feed" class="camera-feed">
-              <video
-                id="video-stream"
-                autoplay
-                playsinline
-                style="display: none"
-              ></video>
-              <canvas id="canvas-capture" style="display: none"></canvas>
+              <!-- <canvas id="canvas-capture" style="display: none"></canvas> -->
               <p id="feed-placeholder">
                 <span class="emoji"></span> 📷 Start your camera or ⬆️ upload an
                 image.
               </p>
+
+              <input
+                type="file"
+                id="camera-input"
+                accept="image/*"
+                capture="environment"
+                style="display: none"
+              />
+
+            <img id="image-preview" style="display:none; max-width:100%" />
+
+             
             </div>
 
             <div class="controls">
-              
               <button id="upload-img-btn" class="control-button upload">
                 <span class="emoji" style="padding-bottom: 5px">⬆️</span> Upload
                 & Analyze
               </button>
 
+          
+              <button id="start-cam-btn" class="control-button primary">
+                <span class="emoji" style="padding-bottom: 5px">📷</span>
+                Capture & Analyze
+              </button>
+            </div>
+
+              <p style="display: flex; justify-content: center; align-items: center;" id="analyzing"></p>
+
+            <div class="controls">
               <button id="clear-img-btn" class="control-button danger" disabled>
                 <span class="emoji">🧹</span> Clear Image
               </button>
 
-            </div>
-
-            <p style="text-align: center">or</p>
-
-            <div class="controls">
-              <button id="start-cam-btn" class="control-button primary">
-                <span class="emoji" style="padding-bottom: 5px">📷</span> Start
-                Camera
-              </button>
-
-              <button
+              <!-- <button
                 id="capture-btn"
                 class="control-button secondary"
                 disabled
               >
                 <span class="emoji">🔎</span> Capture & Analyze
-              </button>
-              <button id="stop-cam-btn" class="control-button danger" disabled>
+              </button> -->
+              <!-- <button id="stop-cam-btn" class="control-button danger" disabled>
                 <span class="emoji">🚫</span> Stop Camera
-              </button>
+              </button> -->
             </div>
           </div>
 
@@ -214,15 +210,16 @@
         </div>
       </section>
 
-      <footer  >
-        <p>&copy; 2025 Meaty. Built for Chefs and Cooks. </p>
-        <a  href="https://github.com/Allen-pie/Meat-Freshness-Classifier-Deep-Learning" target="_blank">
-          <img src="Assets/github.svg" alt="Github"/>
+      <footer>
+        <p>&copy; 2025 Meaty. Built for Chefs and Cooks.</p>
+        <a
+          href="https://github.com/Allen-pie/Meat-Freshness-Classifier-Deep-Learning"
+          target="_blank"
+        >
+          <img src="Assets/github.svg" alt="Github" />
           Github
         </a>
       </footer>
-
-
     </div>
 
     <script src="script.js"></script>

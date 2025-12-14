@@ -8,11 +8,7 @@ import io
 from huggingface_hub import hf_hub_download
 
 app = Flask(__name__)
-CORS(app, resources={
-    r"/classify-freshness" : {
-        "origins" : ["https://allen-pie.github.io"]
-    }
-})
+CORS(app)
 
 # Model is stored in hugging face repo because of size limit in deployment
 MODEL_PATH = hf_hub_download(
@@ -49,4 +45,6 @@ def classifyImage():
     return {"class_label": label }, 200
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",
+            port=5000,
+        debug=True)

@@ -5,7 +5,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from flask import Flask, request
 from flask_cors import CORS
 import io
-from pathlib import Path
+from huggingface_hub import hf_hub_download
 
 app = Flask(__name__)
 CORS(app, resources={
@@ -14,7 +14,11 @@ CORS(app, resources={
     }
 })
 
-MODEL_PATH = Path(__file__).resolve().parent / 'outputs/models/MobileNetV2_FINETUNED_13.keras'
+# Model is stored in hugging face repo because of size limit in deployment
+MODEL_PATH = hf_hub_download(
+    repo_id="ayaMee/meat-freshness-classifier-mobilenetv2",
+    filename="MobileNetV2_FINETUNED_13.keras"
+)
 CLASS_NAMES = ["Fresh", "Spoiled"]
 
 def preprocessImage(img, target_size=(224,224)):

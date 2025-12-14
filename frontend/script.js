@@ -31,9 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const startCamera = async () => {
         resetResult();
         try {
-
-            currentStream = await navigator.mediaDevices.getUserMedia({ video: true });
-
+            currentStream = await navigator.mediaDevices.getUserMedia({ video: {
+                facingMode : {
+                    ideal : "environment"
+                }
+            } });
             videoStream.srcObject = currentStream;
             videoStream.style.display = 'block';
             feedPlaceholder.style.display = 'none';

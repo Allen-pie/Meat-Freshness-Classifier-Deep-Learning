@@ -198,10 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (quality === "Fresh") {
             resultBox.classList.add('good');
-            resultBox.innerHTML = `
+            // <p>Detection Confidence: **${confidence}%**</p>             <p>Detection Confidence: **${confidence}%**</p>
+            resultBox.innerHTML = `   
             <span class="emoji">✅</span>
-            <h4>**Excellent Quality!**</h4>
-            <p>Detection Confidence: **${confidence}%**</p>
+            <h4>**Fresh Quality!**</h4>
             <p>This meat is fresh and ready for your masterpiece. Cook on!</p>
         `;
         } else if (quality === "Spoiled") {
@@ -209,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
             resultBox.innerHTML = `
             <span class="emoji">❌</span>
             <h4>**Quality Warning: Spoiled!**</h4>
-            <p>Detection Confidence: **${confidence}%**</p>
             <p>It is strongly recommended to **discard** this cut immediately for safety.</p>
         `;
         } else {

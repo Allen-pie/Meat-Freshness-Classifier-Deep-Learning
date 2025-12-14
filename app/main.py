@@ -7,7 +7,11 @@ from flask_cors import CORS
 import io
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={
+    r"/classify-freshness" : {
+        "origins" : ["http://127.0.0.1:5500"]
+    }
+})
 
 MODEL_PATH = './outputs/models/MobileNetV2_FINETUNED_13.keras'
 CLASS_NAMES = ["Fresh", "Spoiled"]

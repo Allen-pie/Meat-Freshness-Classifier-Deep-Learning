@@ -5,15 +5,16 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from flask import Flask, request
 from flask_cors import CORS
 import io
+from pathlib import Path
 
 app = Flask(__name__)
 CORS(app, resources={
     r"/classify-freshness" : {
-        "origins" : ["http://127.0.0.1:5500"]
+        "origins" : ["https://allen-pie.github.io"]
     }
 })
 
-MODEL_PATH = './outputs/models/MobileNetV2_FINETUNED_13.keras'
+MODEL_PATH = Path(__file__).resolve().parent / 'outputs/models/MobileNetV2_FINETUNED_13.keras'
 CLASS_NAMES = ["Fresh", "Spoiled"]
 
 def preprocessImage(img, target_size=(224,224)):
@@ -45,4 +46,3 @@ def classifyImage():
     
 if __name__ == '__main__':
     app.run(debug=True)
-

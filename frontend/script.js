@@ -68,9 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const analyzeMeat = async (imageBlob, mode = "cam") => {
     const formData = new FormData();
     formData.append("image", imageBlob, "meat_sample.jpg");
-
-    // ganti sesuai ipconfig
-    const API_URL = "URL/classify-freshness";
+    
+    const API_URL = "https://hect1x-meatballs.hf.space/classify-freshness";
 
     try {
       const response = await fetch(API_URL, {

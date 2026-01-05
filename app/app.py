@@ -6,15 +6,19 @@ from flask import Flask, request
 from flask_cors import CORS
 import io
 from huggingface_hub import hf_hub_download
+from pathlib import Path
+
 
 app = Flask(__name__)
 CORS(app)
 
 # Model is stored in hugging face repo because of size limit in deployment
-MODEL_PATH = hf_hub_download(
-    repo_id="ayaMee/meat-freshness-classifier-mobilenetv2",
-    filename="MobileNetV2_FINETUNED_13.keras"
-)
+MODEL_PATH = Path(__file__).resolve().parent.parent / 'outputs/models/MobileNetV2_FINETUNED_LAST.keras'
+
+# hf_hub_download(
+#     repo_id="ayaMee/meat-freshness-classifier-mobilenetv2",
+#     filename="MobileNetV2_FINETUNED_13.keras"
+# )
 CLASS_NAMES = ["Fresh", "Spoiled"]
 
 def preprocessImage(img, target_size=(224,224)):
